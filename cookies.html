@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GrowPrime - Cookies Policy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  :root {
+    --earth-brown: #8D6E63;
+    --olive: #A1887F;
+    --text-body: #6b7280;
+    --bg-light: #ffffff;
+    --shadow-light: rgba(141, 110, 99, 0.15);
+    --border-radius: 0.75rem;
+    --transition-speed: 0.3s;
+  }
+
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-body);
+    line-height: 1.7;
+    scroll-behavior: smooth;
+    padding-bottom: 6rem; /* For cookie consent bar */
+  }
+  a {
+    color: var(--earth-brown);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+  }
+  a:hover,
+  a:focus {
+    color: var(--olive);
+    outline: none;
+  }
+  h1, h2, h3, h4 {
+    color: var(--earth-brown);
+    font-weight: 700;
+    margin-top: 0;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+  p {
+    font-size: 1.125rem;
+    max-width: 760px;
+    margin-bottom: 1.25rem;
+  }
+  ul, ol {
+    max-width: 760px;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  section {
+    padding: 4rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--bg-light);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    z-index: 1000;
+  }
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--earth-brown);
+    letter-spacing: 1px;
+    user-select: none;
+    cursor: default;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  .nav-links a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color var(--transition-speed);
+  }
+  .nav-links a:hover,
+  .nav-links a:focus {
+    border-color: var(--earth-brown);
+  }
+  .btn-primary {
+    background: var(--earth-brown);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.6rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform 0.2s;
+    box-shadow: 0 6px 12px rgba(141,110,99,0.3);
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background: var(--olive);
+    transform: scale(1.05);
+    outline: none;
+  }
+
+  /* Main Content */
+  main {
+    padding-bottom: 4rem;
+  }
+  section + section {
+    border-top: 1px solid var(--shadow-light);
+  }
+
+  /* Glossary term links */
+  .glossary-term {
+    color: var(--earth-brown);
+    cursor: pointer;
+    border-bottom: 1px dashed var(--earth-brown);
+    font-weight: 600;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    text-align: left;
+  }
+  .glossary-term:hover,
+  .glossary-term:focus {
+    color: var(--olive);
+    outline: none;
+  }
+
+  /* Popup Modal */
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(141,110,99,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+  }
+  .popup-overlay.active {
+    display: flex;
+    animation: fadeInBackground 0.4s ease forwards;
+  }
+  @keyframes fadeInBackground {
+    from {background: rgba(141,110,99,0);}
+    to {background: rgba(141,110,99,0.85);}
+  }
+  .popup-content {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow-light);
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 2.5rem 3rem;
+    position: relative;
+    animation: popupSlideIn 0.4s cubic-bezier(0.25,0.8,0.25,1);
+    color: var(--text-body);
+  }
+  @keyframes popupSlideIn {
+    from {
+      opacity: 0; 
+      transform: translateY(60px);
+    } 
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--earth-brown);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+  }
+  .popup-close:hover,
+  .popup-close:focus {
+    background: var(--olive);
+    outline: none;
+  }
+  .popup-content h3 {
+    margin-top: 0;
+    color: var(--earth-brown);
+  }
+  .popup-content p {
+    margin-bottom: 1rem;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--earth-brown);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+  footer a {
+    color: white;
+    font-weight: 600;
+  }
+
+  /* Cookie Consent Banner */
+  #cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--earth-brown);
+    color: #fff;
+    box-shadow: 0 -4px 15px var(--shadow-light);
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    z-index: 1200;
+  }
+  #cookie-consent p {
+    margin: 0;
+    flex: 1 1 60%;
+    min-width: 220px;
+  }
+  #cookie-consent .btn {
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.6rem 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 0.75rem;
+    min-width: 120px;
+    transition: background-color var(--transition-speed);
+  }
+  #cookie-consent .btn.accept {
+    background: var(--olive);
+    color: #fff;
+  }
+  #cookie-consent .btn.accept:hover,
+  #cookie-consent .btn.accept:focus {
+    background: #7b6f61;
+    outline: none;
+  }
+  #cookie-consent .btn.decline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  #cookie-consent .btn.decline:hover,
+  #cookie-consent .btn.decline:focus {
+    background: rgba(255 255 255 / 0.2);
+    outline: none;
+  }
+
+  /* Responsive typography */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+    h2 {
+      font-size: 1.75rem;
+    }
+    p, li {
+      font-size: 1rem;
+    }
+    .popup-content {
+      padding: 1.5rem 2rem;
+      max-width: 90vw;
+      max-height: 85vh;
+    }
+    #cookie-consent {
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 0.95rem;
+    }
+    #cookie-consent p {
+      flex: none;
+      margin-bottom: 0.75rem;
+    }
+    #cookie-consent .btn {
+      min-width: auto;
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 0.5rem;
+    }
+    #cookie-consent .btn:last-child {
+      margin-bottom: 0;
+    }
+  }
+</style>
+</head>
+<body>
+<header role="banner">
+  <nav role="navigation" aria-label="Primary Navigation">
+    <div class="logo" aria-label="GrowPrime Gardening Logo">GrowPrime</div>
+    <div class="nav-links">
+      <a href="index.html" tabindex="0">Home</a>
+      <a href="privacy.html" tabindex="0">Privacy </a>
+      <a href="terms.html" tabindex="0">Terms & Conditions</a>
+      <a href="cookies.html" tabindex="0" aria-current="page">Cookies</a>
+      <a href="contact.html" tabindex="0">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="container" aria-labelledby="cookies-title">
+    <h1 id="cookies-title">Cookies Policy</h1>
+    <p>At GrowPrime, we value your privacy and strive to provide complete transparency regarding the data we collect and how it is used. This Cookies Policy explains what cookies are, how GrowPrime uses them on our website, and your choices regarding their usage.</p>
+    <p>By using our website, you consent to cookies in accordance with this policy unless you choose to decline them using our cookie consent dialogue below.</p>
+  </section>
+
+  <section class="container" aria-labelledby="what-are-cookies">
+    <h2 id="what-are-cookies">What Are Cookies?</h2>
+    <p>Cookies are small text files stored on your computer or device by websites you visit. They help the website remember your preferences, login details, and provide essential functionality for a better browsing experience.</p>
+    <p>Cookies serve various purposes such as enabling core site features, analyzing site performance, personalizing content, and delivering targeted advertising.</p>
+  </section>
+
+  <section class="container" aria-labelledby="types-of-cookies">
+    <h2 id="types-of-cookies">Types of Cookies We Use</h2>
+    <p>We utilize several categories of cookies to operate and improve our website, including but not limited to:</p>
+    <ul>
+      <li><strong>Strictly Necessary Cookies:</strong> These cookies enable basic website functions such as page navigation, session management, and security. Without these, our website may not function properly.</li>
+      <li><strong>Performance and Analytics Cookies:</strong> These cookies collect information on how visitors use our site, helping us monitor performance, understand user interactions, and improve our services. The data collected is aggregated and anonymous.</li>
+      <li><strong>Functionality Cookies:</strong> These remember your preferences and choices (such as language or login details) for a personalized website experience.</li>
+      <li><strong>Advertising and Targeting Cookies:</strong> These cookies collect data to deliver advertisements relevant to your interests and measure the effectiveness of our marketing campaigns. They may be set by third-party advertising partners.</li>
+    </ul>
+  </section>
+
+  <section class="container" aria-labelledby="how-we-use-cookies">
+    <h2 id="how-we-use-cookies">How We Use Cookies</h2>
+    <p>Cookies allow us to:</p>
+    <ul>
+      <li>Provide and maintain your access to secure and personalized parts of our website.</li>
+      <li>Remember your preferences and customize your interaction with GrowPrime.</li>
+      <li>Analyze usage patterns to optimize the website’s functionality and content.</li>
+      <li>Measure and improve the effectiveness of our marketing and advertising efforts.</li>
+      <li>Detect and prevent fraud and other unauthorized activities.</li>
+    </ul>
+  </section>
+
+  <section class="container" aria-labelledby="third-party-cookies">
+    <h2 id="third-party-cookies">Third-Party Cookies</h2>
+    <p>Some cookies used on our website may be set by third-party service providers, such as analytics, advertising, and social media platforms. These cookies are subject to the privacy policies of those third parties, and GrowPrime is not responsible for their content or usage.</p>
+    <p>We only partner with trusted providers who adhere to responsible data privacy and security standards.</p>
+  </section>
+
+  <section class="container" aria-labelledby="managing-cookies">
+    <h2 id="managing-cookies">Managing Cookies</h2>
+    <p>You have the right to decide whether to accept or decline cookies. Most web browsers allow you to change your cookie settings, enabling you to block or delete cookies if you prefer.</p>
+    <p>To manage your cookie preferences, you can usually find these options in your browser’s privacy or security settings. Please note that disabling some cookies may impact the functionality, usability, or user experience of our website.</p>
+    <p>Our website includes a cookie consent banner to help you make choices on cookie usage at your first visit. You can accept all, decline non-essential cookies, or adjust your preferences.</p>
+  </section>
+
+  <section class="container" aria-labelledby="cookie-policy-changes">
+    <h2 id="cookie-policy-changes">Changes to Our Cookies Policy</h2>
+    <p>We may update this Cookies Policy periodically to reflect changes in our practices, technologies, or legal requirements.</p>
+    <p>Significant changes will be communicated to users through our website or other means as appropriate. We encourage you to review this policy regularly to stay informed about our use of cookies and your options regarding them.</p>
+  </section>
+
+  <section class="container" aria-labelledby="contact-cookies">
+    <h2 id="contact-cookies">Contact Us About Cookies</h2>
+    <p>If you have questions about this Cookies Policy or our use of cookies, please contact us at:</p>
+    <address>
+      <strong>GrowPrime Gardening</strong><br />
+      Metrotech Center, Brooklyn, NY 11201, USA<br />
+      Phone: <a href="tel:+18442327822" aria-label="Call GrowPrime">(844) 232-7822</a><br />
+      Email: <a href="mailto:info@growprime.com">info@growprime.com</a>
+    </address>
+  </section>
+
+  <section class="container" aria-label="Glossary of Cookie Terms">
+    <h2>Glossary of Cookie Terms</h2>
+    <p>Click on each phrase below for detailed explanations:</p>
+    <ul>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-essential" tabindex="0">Strictly Necessary Cookies</button></li>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-analytics" tabindex="0">Analytics Cookies</button></li>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-functionality" tabindex="0">Functionality Cookies</button></li>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-advertising" tabindex="0">Advertising Cookies</button></li>
+    </ul>
+  </section>
+
+  <!-- Long-Form Detailed Content, Expanding each topic -->
+  <section class="container" aria-labelledby="detailed-explanation">
+    <h2 id="detailed-explanation">In-Depth Explanation of Cookie Usage at GrowPrime</h2>
+
+    <p>Cookies have become essential tools that enhance the way we interact with the web. At GrowPrime, our thoughtful use of cookies aims to provide a seamless, secure, and tailored browsing experience while protecting your privacy and complying with all applicable regulations.</p>
+    
+    <p>Understanding how cookies operate and affect your data privacy is vital. Cookies store information about your visit and allow our website to "remember" your preferences, settings, and prior interactions, so you don't have to re-enter information during subsequent visits. This makes your experience faster, more efficient, and personalized.</p>
+    
+    <p>Below, we dive deeper into each category of cookies we use, the rationale behind them, and how they impact your experience with GrowPrime.</p>
+    
+    <h3>Strictly Necessary Cookies</h3>
+    <p>These cookies are fundamental to the operation of our website. For example, they enable you to navigate between pages, access secure areas, and interact with features such as booking forms or login sessions. Without these cookies, certain areas of the website may be inaccessible or behave unpredictably.</p>
+    <p>Examples include session cookies that expire when you close your browser and persistent cookies that store essential preferences without infringing on your privacy.</p>
+    
+    <h3>Performance and Analytics Cookies</h3>
+    <p>These cookies help us understand how users engage with our website. By collecting anonymized, aggregated data on page visits, time spent on sections, and navigation paths, we can identify bottlenecks, most popular content, and opportunities for improvement.</p>
+    <p>Such cookies do not collect personally identifiable information (PII). They assist our technical teams to optimize website speed, content relevance, and overall user satisfaction.</p>
+    
+    <h3>Functionality Cookies</h3>
+    <p>To tailor your browsing experience, functionality cookies remember preferences you have set, such as language choice, font size, or specific service interests.</p>
+    <p>This helps provide a consistent experience every time you return even if you are not logged in.</p>
+    
+    <h3>Advertising and Targeting Cookies</h3>
+    <p>While GrowPrime does not personally engage in advertising cookies, third parties such as Google Ads or Facebook may place cookies through our site. These cookies collect information about your browsing habits across websites to present advertisements relevant to your interests.</p>
+    <p>You have control over these cookies through your browser settings or by managing preferences via third-party ad providers.</p>
+
+    <h3>Your Choice and Control</h3>
+    <p>Our cookie consent banner allows you to accept all cookies or decline non-essential ones. You can change your preferences anytime through your browser’s cookie settings. Additionally, many modern browsers offer options to block third-party cookies by default, enhancing your privacy control.</p>
+    <p>Blocking cookies might limit certain functionalities on our website.</p>
+
+    <h3>Cookies and Legal Compliance</h3>
+    <p>GrowPrime complies with all applicable cookie regulations including GDPR and CCPA. Our cookie consent mechanism ensures informed, explicit consent for non-essential cookies.</p>
+    <p>We regularly review cookie usage to ensure alignment with emerging legislation and best practices.</p>
+
+    <h3>How Long Do Cookies Last?</h3>
+    <p>Cookie duration varies by type. Session cookies expire upon closing your browser while persistent cookies can remain for days, months, or even years unless manually deleted.</p>
+
+    <h3>How to Remove Cookies?</h3>
+    <p>You can remove cookies at any time via your browser settings. Instructions vary by browser but generally involve accessing history or privacy settings and deleting stored cookies.</p>
+    <p>Regularly clearing cookies can enhance privacy but may require reconfiguration of preferences on frequently visited websites.</p>
+
+    <h3>Children’s Use of Cookies</h3>
+    <p>We do not knowingly collect data from children under 13 through cookies or otherwise. Parents should be aware of their children’s internet activities and browser settings.</p>
+
+    <h3>Contact Us</h3>
+    <p>If you have questions regarding our use of cookies or wish to exercise privacy rights, contact GrowPrime via the details below.</p>
+
+  </section>
+
+</main>
+
+<footer role="contentinfo">
+  &copy; 2024 GrowPrime Gardening | Metrotech Center, Brooklyn, NY 11201, USA | Phone: (844) 232-7822
+</footer>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent" role="dialog" aria-live="polite" aria-label="Cookie consent banner">
+  <p>We use cookies to enhance your experience. You can accept all cookies or decline non-essential cookies.</p>
+  <div>
+    <button class="btn accept" id="btn-accept-cookies">Accept</button>
+    <button class="btn decline" id="btn-decline-cookies">Decline</button>
+  </div>
+</div>
+
+<!-- Popups for glossary terms -->
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-essential" aria-labelledby="title-term-essential" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Strictly Necessary Cookies definition">&times;</button>
+    <h3 id="title-term-essential">Strictly Necessary Cookies</h3>
+    <p>These cookies are essential for the operation of the GrowPrime website. They enable core features like secure login, navigation, and form submissions, allowing the website to function properly.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-analytics" aria-labelledby="title-term-analytics" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Analytics Cookies definition">&times;</button>
+    <h3 id="title-term-analytics">Analytics Cookies</h3>
+    <p>Analytics cookies help track and analyze how visitors use our website, providing insights into performance and user experience. The data collected is aggregated and anonymized to protect privacy.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-functionality" aria-labelledby="title-term-functionality" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Functionality Cookies definition">&times;</button>
+    <h3 id="title-term-functionality">Functionality Cookies</h3>
+    <p>Functionality cookies remember choices you make on the website, such as language preferences or service selections, to provide a more personalized and convenient experience.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-advertising" aria-labelledby="title-term-advertising" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Advertising Cookies definition">&times;</button>
+    <h3 id="title-term-advertising">Advertising Cookies</h3>
+    <p>Advertising cookies collect information about your browsing activity to deliver relevant ads and measure ad campaign effectiveness. These may be set by third-party providers operating on our website.</p>
+  </div>
+</div>
+
+<script>
+  // Popup open/close logic for glossary terms
+  const popupButtons = document.querySelectorAll('.glossary-term');
+  const popups = document.querySelectorAll('.popup-overlay');
+
+  function openPopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+      popup.classList.add('active');
+      popup.setAttribute('aria-hidden', 'false');
+      popup.focus();
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closePopup(popup) {
+    popup.classList.remove('active');
+    popup.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  popupButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      openPopup(button.getAttribute('aria-controls'));
+    });
+    button.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openPopup(button.getAttribute('aria-controls'));
+      }
+    });
+  });
+
+  popups.forEach(popup => {
+    const closeBtn = popup.querySelector('.popup-close');
+    closeBtn.addEventListener('click', () => closePopup(popup));
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        closePopup(popup);
+      }
+    });
+    popup.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closePopup(popup);
+      }
+      if (e.key === 'Tab') {
+        const focusableElements = popup.querySelectorAll('a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])');
+        if (focusableElements.length === 0) return;
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    });
+  });
+
+  // Cookie Consent Logic
+  const cookieConsent = document.getElementById('cookie-consent');
+  const btnAccept = document.getElementById('btn-accept-cookies');
+  const btnDecline = document.getElementById('btn-decline-cookies');
+
+  // Check if consent cookie is set
+  function getCookie(name) {
+    const value = "; " + document.cookie;
+    const parts = value.split("; " + name + "=");
+    if (parts.length === 2) return parts.pop().split(";").shift();
+  }
+
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+      const date = new Date();
+      date.setTime(date.getTime() + (days*24*60*60*1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+  }
+
+  function hideConsent() {
+    cookieConsent.style.display = 'none';
+  }
+
+  function handleConsent(choice) {
+    if(choice === 'accept') {
+      setCookie('growprime_cookie_consent', 'accepted', 365);
+    } else {
+      setCookie('growprime_cookie_consent', 'declined', 365);
+    }
+    hideConsent();
+  }
+
+  // On page load check cookie
+  window.addEventListener('load', () => {
+    const consent = getCookie('growprime_cookie_consent');
+    if(!consent) {
+      cookieConsent.style.display = 'flex';
+    } else {
+      cookieConsent.style.display = 'none';
+    }
+  });
+
+  btnAccept.addEventListener('click', () => {
+    handleConsent('accept');
+  });
+  btnDecline.addEventListener('click', () => {
+    handleConsent('decline');
+  });
+</script>
+
+</body>
+</html>
+

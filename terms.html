@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GrowPrime - Terms and Conditions</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  :root {
+    --earth-brown: #8D6E63;
+    --olive: #A1887F;
+    --text-body: #6b7280;
+    --bg-light: #ffffff;
+    --shadow-light: rgba(141, 110, 99, 0.15);
+    --border-radius: 0.75rem;
+    --transition-speed: 0.3s;
+  }
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-body);
+    line-height: 1.7;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: var(--earth-brown);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+  }
+  a:hover,
+  a:focus {
+    color: var(--olive);
+    outline: none;
+  }
+  h1, h2, h3, h4 {
+    color: var(--earth-brown);
+    font-weight: 700;
+    margin-top: 0;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.25rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+  p {
+    font-size: 1.125rem;
+    max-width: 760px;
+    margin-bottom: 1.25rem;
+  }
+  ul, ol {
+    max-width: 760px;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  section {
+    padding: 4rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--bg-light);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    z-index: 1000;
+  }
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--earth-brown);
+    letter-spacing: 1px;
+    user-select: none;
+    cursor: default;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  .nav-links a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color var(--transition-speed);
+  }
+  .nav-links a:hover,
+  .nav-links a:focus {
+    border-color: var(--earth-brown);
+  }
+  .btn-primary {
+    background: var(--earth-brown);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.6rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform 0.2s;
+    box-shadow: 0 6px 12px rgba(141,110,99,0.3);
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background: var(--olive);
+    transform: scale(1.05);
+    outline: none;
+  }
+
+  main {
+    padding-bottom: 6rem;
+  }
+  section + section {
+    border-top: 1px solid var(--shadow-light);
+  }
+  /* Glossary term links */
+  .glossary-term {
+    color: var(--earth-brown);
+    cursor: pointer;
+    border-bottom: 1px dashed var(--earth-brown);
+    font-weight: 600;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    text-align: left;
+  }
+  .glossary-term:hover,
+  .glossary-term:focus {
+    color: var(--olive);
+    outline: none;
+  }
+  /* Popup Modal */
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(141,110,99,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+  }
+  .popup-overlay.active {
+    display: flex;
+    animation: fadeInBackground 0.4s ease forwards;
+  }
+  @keyframes fadeInBackground {
+    from {background: rgba(141,110,99,0);}
+    to {background: rgba(141,110,99,0.85);}
+  }
+  .popup-content {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow-light);
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 2.5rem 3rem;
+    position: relative;
+    animation: popupSlideIn 0.4s cubic-bezier(0.25,0.8,0.25,1);
+    color: var(--text-body);
+  }
+  @keyframes popupSlideIn {
+    from {
+      opacity: 0; 
+      transform: translateY(60px);
+    } 
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--earth-brown);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+  }
+  .popup-close:hover,
+  .popup-close:focus {
+    background: var(--olive);
+    outline: none;
+  }
+  .popup-content h3 {
+    margin-top: 0;
+    color: var(--earth-brown);
+  }
+  .popup-content p {
+    margin-bottom: 1rem;
+  }
+  /* Footer */
+  footer {
+    background: var(--earth-brown);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+  footer a {
+    color: white;
+    font-weight: 600;
+  }
+  /* Responsive typography */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+    h2 {
+      font-size: 1.75rem;
+    }
+    p, li {
+      font-size: 1rem;
+    }
+    .popup-content {
+      padding: 1.5rem 2rem;
+      max-width: 90vw;
+      max-height: 85vh;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header role="banner">
+  <nav role="navigation" aria-label="Primary Navigation">
+    <div class="logo" aria-label="GrowPrime Gardening Logo">GrowPrime</div>
+    <div class="nav-links">
+      <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0" aria-current="page" >Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="container" aria-labelledby="terms-title">
+    <h1 id="terms-title">Terms and Conditions</h1>
+    <p>Welcome to GrowPrime Gardening! These Terms and Conditions ("Terms") govern your use of our website and services. By accessing or using our site or purchasing services from GrowPrime, you agree to comply with and be bound by these Terms. Please read them carefully.</p>
+
+    <p>GrowPrime ("we", "us", "our") is committed to providing you with quality gardening and landscaping services. This document sets forth your rights and responsibilities as a user and customer, as well as our obligations.</p>
+
+    <p>These Terms form a legally binding agreement between you and GrowPrime. If you do not agree to these Terms, please do not use our services or website.</p>
+  </section>
+
+  <section class="container" aria-labelledby="definitions">
+    <h2 id="definitions">1. Definitions</h2>
+    <p>For clarity in this Agreement:</p>
+    <ul>
+      <li><strong>"Services"</strong> refers to any gardening, landscaping, maintenance, consultation, or related services provided by GrowPrime.</li>
+      <li><strong>"User"</strong> means anyone accessing the GrowPrime website or using the Services.</li>
+      <li><strong>"Customer"</strong> means a user who has contracted for services with GrowPrime.</li>
+      <li><strong>"Content"</strong> includes text, images, logos, graphics, and other materials provided on our website or associated media.</li>
+      <li><strong>"Agreement"</strong> refers to these Terms and Conditions.</li>
+    </ul>
+  </section>
+
+  <section class="container" aria-labelledby="use-of-site">
+    <h2 id="use-of-site">2. Use of the Website and Services</h2>
+    <p>When you use our website or services, you agree to:</p>
+    <ul>
+      <li>Be at least 18 years old or have the consent of a legal guardian to enter binding agreements with GrowPrime.</li>
+      <li>Provide accurate and truthful information when submitting inquiries, orders, or personal data.</li>
+      <li>Use the site and services only for lawful purposes and not to infringe on others' rights or disrupt service functionality.</li>
+      <li>Not attempt to gain unauthorized access to any part of the website or related systems.</li>
+    </ul>
+  </section>
+
+  <section class="container" aria-labelledby="service-provision">
+    <h2 id="service-provision">3. Services Provision</h2>
+    <p>GrowPrime agrees to provide the services ordered by the customer in a professional and timely manner consistent with industry standards.</p>
+    <p>We reserve the right to refuse service to anyone for legitimate reasons, including but not limited to fraud, security concerns, or violation of these Terms.</p>
+    <p>Service descriptions and availability are subject to change, and we will make reasonable efforts to communicate any significant changes promptly.</p>
+  </section>
+
+  <section class="container" aria-labelledby="orders-and-payments">
+    <h2 id="orders-and-payments">4. Orders and Payments</h2>
+    <p>All service orders must be confirmed in writing via email or contract before work begins.</p>
+    <p>Prices for services will be as stated in our quotations or website and are subject to change with notice.</p>
+    <p>Payments may be required upfront or according to payment schedules agreed upon in contracts.</p>
+    <p>We accept payment through approved methods specified at order including credit cards and electronic payments.</p>
+    <p>Failure to make timely payments may result in suspension or termination of services, and may incur additional fees or interest charges.</p>
+  </section>
+
+  <section class="container" aria-labelledby="customer-obligations">
+    <h2 id="customer-obligations">5. Customer Obligations</h2>
+    <p>Customers agree to:</p>
+    <ul>
+      <li>Provide accurate property information and access for service delivery.</li>
+      <li>Remove obstacles or hazards that might impede service agents and notify GrowPrime of any special conditions impacting service.</li>
+      <li>Comply with any recommendations or instructions provided by GrowPrime to ensure safety and quality.</li>
+      <li>Maintain appropriate insurance on property or items involved in service if applicable.</li>
+    </ul>
+  </section>
+
+  <section class="container" aria-labelledby="warranties-and-disclaimers">
+    <h2 id="warranties-and-disclaimers">6. Warranties and Disclaimers</h2>
+    <p>GrowPrime provides services on a reasonable skill and care basis as applicable to the gardening industry.</p>
+    <p>We make no warranties or guarantees about specific results, plant growth, weather conditions, or other external factors beyond our control.</p>
+    <p>Except as required by law, all implied warranties, including merchantability and fitness for a particular purpose, are disclaimed.</p>
+  </section>
+
+  <section class="container" aria-labelledby="limitations-of-liability">
+    <h2 id="limitations-of-liability">7. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, GrowPrime and its affiliates shall not be liable for any indirect, incidental, consequential, special, or punitive damages arising out of or relating to the use of our services or website.</p>
+    <p>Our total liability to you for any claim shall be limited to the amount paid for the particular service giving rise to the claim.</p>
+    <p>Neither party shall be liable for delays or failure caused by unforeseeable circumstances outside their reasonable control, including natural disasters.</p>
+  </section>
+
+  <section class="container" aria-labelledby="intellectual-property">
+    <h2 id="intellectual-property">8. Intellectual Property</h2>
+    <p>All content on this website, including trademarks, logos, text, graphics, and software, is owned or licensed by GrowPrime and is protected by copyright and trademark laws.</p>
+    <p>You may not reproduce, distribute, or create derivative works without our prior written consent.</p>
+  </section>
+
+  <section class="container" aria-labelledby="third-party-links">
+    <h2 id="third-party-links">9. Third Party Links and Services</h2>
+    <p>Our website and services may contain links to third-party websites or services not controlled by GrowPrime.</p>
+    <p>We do not endorse and are not responsible for any third-party content, privacy policies, or practices.</p>
+  </section>
+
+  <section class="container" aria-labelledby="privacy-ref">
+    <h2 id="privacy-ref">10. Privacy</h2>
+    <p>Your use of GrowPrime's services and website is also governed by our <a href="privacy.html">Privacy Policy</a>, which explains how we collect and use personal data.</p>
+  </section>
+
+  <section class="container" aria-labelledby="termination">
+    <h2 id="termination">11. Termination</h2>
+    <p>GrowPrime reserves the right to suspend or terminate your access to services or website without notice for breach of these Terms or other legitimate reasons.</p>
+    <p>Upon termination, all outstanding fees become due immediately.</p>
+  </section>
+
+  <section class="container" aria-labelledby="indemnification">
+    <h2 id="indemnification">12. Indemnification</h2>
+    <p>You agree to indemnify, defend, and hold harmless GrowPrime and its affiliates against any claims, damages, liabilities, or costs arising from your breach of these Terms or your misuse of our services or site.</p>
+  </section>
+
+  <section class="container" aria-labelledby="dispute-resolution">
+    <h2 id="dispute-resolution">13. Governing Law and Dispute Resolution</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the State of New York, USA.</p>
+    <p>Any disputes arising from these Terms or use of GrowPrime services shall be resolved through good faith negotiations. If unresolved, disputes may be settled via binding arbitration or courts of New York.</p>
+  </section>
+
+  <section class="container" aria-labelledby="modification">
+    <h2 id="modification">14. Changes to Terms</h2>
+    <p>GrowPrime may revise these Terms periodically to reflect legal or operational changes.</p>
+    <p>We will notify you of significant modifications via website updates or direct communication. Continued use of our services constitutes acceptance of the revised terms.</p>
+  </section>
+
+  <section class="container" aria-labelledby="contact-terms">
+    <h2 id="contact-terms">15. Contact Information</h2>
+    <p>If you have any questions or need further clarification about these Terms, please contact us at:</p>
+    <address>
+      <strong>GrowPrime Gardening</strong><br />
+      Metrotech Center, Brooklyn, NY 11201, USA<br />
+      Phone: <a href="tel:+18442327822" aria-label="Call GrowPrime">(844) 232-7822</a><br />
+      Email: <a href="mailto:info@growprime.com">info@growprime.com</a>
+    </address>
+  </section>
+  
+  <section class="container" aria-label="Glossary of Terms">
+    <h2>Glossary of Terms</h2>
+    <p>Click on any term below to read detailed definitions.</p>
+    <ul>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-services" tabindex="0">Services</button></li>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-liability" tabindex="0">Limitation of Liability</button></li>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-indemnification" tabindex="0">Indemnification</button></li>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-arbitration" tabindex="0">Arbitration</button></li>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-intellectualproperty" tabindex="0">Intellectual Property</button></li>
+    </ul>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  &copy; 2024 GrowPrime Gardening | Metrotech Center, Brooklyn, NY 11201, USA | Phone: (844) 232-7822
+</footer>
+
+<!-- Popups for glossary terms -->
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-services" aria-labelledby="title-term-services" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Services definition">&times;</button>
+    <h3 id="title-term-services">Services</h3>
+    <p>"Services" encompass all gardening, landscaping, maintenance, consultation, advice, and related activities provided by GrowPrime to customers, including but not limited to design, installation, and ongoing upkeep of outdoor spaces.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-liability" aria-labelledby="title-term-liability" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Limitation of Liability definition">&times;</button>
+    <h3 id="title-term-liability">Limitation of Liability</h3>
+    <p>This term defines the limits to which GrowPrime is responsible for damages, losses, or claims that may arise in connection with the use of our services or website. Our maximum liability is typically limited to fees paid for the services involved.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-indemnification" aria-labelledby="title-term-indemnification" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Indemnification definition">&times;</button>
+    <h3 id="title-term-indemnification">Indemnification</h3>
+    <p>Indemnification is your agreement to protect GrowPrime from any losses, costs, or liabilities caused by your actions or breaches of these Terms, including legal fees and damages.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-arbitration" aria-labelledby="title-term-arbitration" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Arbitration definition">&times;</button>
+    <h3 id="title-term-arbitration">Arbitration</h3>
+    <p>Arbitration is a method of dispute resolution outside of courts, where an impartial arbitrator makes a binding decision regarding disagreements under these Terms.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-intellectualproperty" aria-labelledby="title-term-intellectualproperty" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Intellectual Property definition">&times;</button>
+    <h3 id="title-term-intellectualproperty">Intellectual Property</h3>
+    <p>Intellectual Property includes copyrights, trademarks, design rights, patents, and other proprietary rights related to GrowPrime's branding, content, and technology.</p>
+  </div>
+</div>
+
+<script>
+  const popupButtons = document.querySelectorAll('.glossary-term');
+  const popups = document.querySelectorAll('.popup-overlay');
+
+  function openPopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+      popup.classList.add('active');
+      popup.setAttribute('aria-hidden', 'false');
+      popup.focus();
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closePopup(popup) {
+    popup.classList.remove('active');
+    popup.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  popupButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      openPopup(button.getAttribute('aria-controls'));
+    });
+    button.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openPopup(button.getAttribute('aria-controls'));
+      }
+    });
+  });
+
+  popups.forEach(popup => {
+    const closeBtn = popup.querySelector('.popup-close');
+    closeBtn.addEventListener('click', () => closePopup(popup));
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        closePopup(popup);
+      }
+    });
+    popup.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closePopup(popup);
+      }
+      if (e.key === 'Tab') {
+        const focusableElements = popup.querySelectorAll('a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])');
+        if (focusableElements.length === 0) return;
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

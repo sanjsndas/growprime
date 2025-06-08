@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GrowPrime - Privacy Policy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  :root {
+    --earth-brown: #8D6E63;
+    --olive: #A1887F;
+    --text-body: #6b7280;
+    --bg-light: #ffffff;
+    --shadow-light: rgba(141, 110, 99, 0.15);
+    --border-radius: 0.75rem;
+    --transition-speed: 0.3s;
+  }
+
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-body);
+    line-height: 1.75;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: var(--earth-brown);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+  }
+  a:hover,
+  a:focus {
+    color: var(--olive);
+    outline: none;
+  }
+  h1, h2, h3, h4 {
+    color: var(--earth-brown);
+    font-weight: 700;
+    margin-top: 0;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1.25rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 2.5rem;
+  }
+  p {
+    font-size: 1.125rem;
+    max-width: 760px;
+    margin-bottom: 1.5rem;
+  }
+  ul, ol {
+    max-width: 760px;
+    padding-left: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  li {
+    margin-bottom: 0.6rem;
+  }
+  section {
+    padding: 4.5rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--bg-light);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    z-index: 1000;
+  }
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--earth-brown);
+    letter-spacing: 1px;
+    user-select: none;
+    cursor: default;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.25rem;
+  }
+  .nav-links a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color var(--transition-speed);
+  }
+  .nav-links a:hover,
+  .nav-links a:focus {
+    border-color: var(--earth-brown);
+  }
+  .btn-primary {
+    background: var(--earth-brown);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.6rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform 0.2s;
+    box-shadow: 0 6px 12px rgba(141,110,99,0.3);
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background: var(--olive);
+    transform: scale(1.05);
+    outline: none;
+  }
+
+  /* Main Content */
+  main {
+    padding-bottom: 6rem;
+  }
+
+  /* Sections */
+  section + section {
+    border-top: 1px solid var(--shadow-light);
+  }
+
+  /* Glossary term links */
+  .glossary-term {
+    color: var(--earth-brown);
+    cursor: pointer;
+    border-bottom: 1px dashed var(--earth-brown);
+    font-weight: 600;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    vertical-align: baseline;
+    text-align: inherit;
+  }
+  .glossary-term:hover,
+  .glossary-term:focus {
+    color: var(--olive);
+    outline: none;
+    text-decoration: underline;
+  }
+
+  /* Popup Modal */
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(141,110,99,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+  }
+  .popup-overlay.active {
+    display: flex;
+    animation: fadeInBackground 0.4s ease forwards;
+  }
+  @keyframes fadeInBackground {
+    from {background: rgba(141,110,99,0);}
+    to {background: rgba(141,110,99,0.85);}
+  }
+  .popup-content {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow-light);
+    max-width: 720px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 3rem 3.5rem;
+    position: relative;
+    animation: popupSlideIn 0.4s cubic-bezier(0.25,0.8,0.25,1);
+    color: var(--text-body);
+  }
+  @keyframes popupSlideIn {
+    from {
+      opacity: 0; 
+      transform: translateY(60px);
+    } 
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .popup-close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    background: var(--earth-brown);
+    color: white;
+    border: none;
+    font-size: 1.7rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+  }
+  .popup-close:hover,
+  .popup-close:focus {
+    background: var(--olive);
+    outline: none;
+  }
+  .popup-content h3 {
+    margin-top: 0;
+    color: var(--earth-brown);
+  }
+  .popup-content p {
+    margin-bottom: 1.25rem;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--earth-brown);
+    color: white;
+    text-align: center;
+    padding: 1.75rem 1rem;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+  footer a {
+    color: white;
+    font-weight: 600;
+  }
+
+  /* Responsive typography & layout */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+    h2 {
+      font-size: 1.75rem;
+    }
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    p, li {
+      font-size: 1rem;
+      max-width: 100%;
+    }
+    .popup-content {
+      padding: 2rem 2.5rem;
+      max-width: 90vw;
+      max-height: 85vh;
+    }
+    nav {
+      padding: 1rem 1.25rem;
+    }
+    .nav-links {
+      gap: 1.25rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header role="banner">
+  <nav role="navigation" aria-label="Primary Navigation">
+    <div class="logo" aria-label="GrowPrime Gardening Logo">GrowPrime</div>
+    <div class="nav-links">
+     <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0"aria-current="page">Privacy</a>
+        <a href="terms.html" tabindex="0" >Terms & Conditions</>
+        <a href="cookies.html" tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us </a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section aria-labelledby="privacy-title" class="container">
+    <h1 id="privacy-title">Privacy Policy</h1>
+    <p>Welcome to GrowPrime! At GrowPrime (“we,” “our,” or “us”), we recognize that privacy is a fundamental right and an essential element of trust between us and our customers, website visitors, and partners. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website, services, or communicate with us.</p>
+    <p>Your privacy is our priority, and we are committed to protecting your personal data with transparency and integrity. Please take a moment to read this policy carefully. By accessing or using our website and services, you acknowledge that you accept this Privacy Policy and consent to the practices described herein.</p>
+    <p>If you do not agree with our privacy terms, please refrain from using our services or providing your personal information.</p>
+  </section>
+
+  <section aria-labelledby="info-collection" class="container">
+    <h2 id="info-collection">Information We Collect</h2>
+    <p>To provide our high-quality gardening and landscaping services and maintain a safe, personalized experience for you, we collect various types of information from and about users of our website and services, including personal information, technical data, and communications data. This information is collected both directly from you and automatically.</p>
+    <h3>Personal Information You Provide</h3>
+    <p>When you interact with GrowPrime—whether through contact forms, service requests, consultations, or newsletter sign-ups—you voluntarily provide us with personal information, which may include:</p>
+    <ul>
+      <li>Your full name and preferred form of address</li>
+      <li>Contact details, such as email address, phone number, and postal address</li>
+      <li>Payment information when purchasing services or products (processed securely by third-party providers)</li>
+      <li>Additional details needed to fulfill your service requests effectively</li>
+    </ul>
+    <h3>Information Collected Automatically</h3>
+    <p>When you visit our website, some information is collected automatically to help us understand how our site is used and to improve user experience. This includes:</p>
+    <ul>
+      <li>Your IP address and approximate geographical location</li>
+      <li>Device and browser type, operating system, and screen resolution</li>
+      <li>Website pages you visit, duration of your visit, and navigation paths</li>
+      <li>Referring website addresses or search terms</li>
+    </ul>
+    <h3>Communication Data</h3>
+    <p>Whenever you communicate with GrowPrime—via email, phone calls, or live chat—we may collect and store the content of those communications as part of our efforts to provide attentive service and resolve your requests efficiently.</p>
+  </section>
+
+  <section aria-labelledby="use-info" class="container">
+    <h2 id="use-info">How We Use Your Information</h2>
+    <p>Your information is vital for us to deliver our mission of cultivating beautiful, thriving gardens tailored to your desires. We use the data collected for the following purposes, always respecting your privacy and safeguarding your data:</p>
+    <ul>
+      <li><strong>Service Delivery:</strong> To process your service requests, schedule appointments, and keep you informed about the status of your gardening projects.</li>
+      <li><strong>Customer Support:</strong> To respond to inquiries, troubleshoot issues, and provide timely assistance through our support channels.</li>
+      <li><strong>Personalization:</strong> To remember your preferences, tailor content, and recommend relevant services or products aligned with your interests.</li>
+      <li><strong>Marketing and Communications:</strong> To send you newsletters, offers, or updates if you have opted in, with easy options to unsubscribe at any time.</li>
+      <li><strong>Compliance and Security:</strong> To monitor for suspicious activity, maintain the security of our website and services, and comply with legal requirements.</li>
+      <li><strong>Improvement and Analytics:</strong> To analyze user interactions and behavior to continually enhance our website, services, and overall customer experience.</li>
+    </ul>
+    <p>We do not sell or trade your personal information to third parties for marketing or other purposes without your explicit consent.</p>
+  </section>
+
+  <section aria-labelledby="third-party-services" class="container">
+    <h2 id="third-party-services">Third-Party Services and Partners</h2>
+    <p>GrowPrime partners with reputable third-party service providers to assist us with hosting, analytics, payment processing, email communications, and customer support tools. These partners help us deliver seamless, secure, and efficient services to you without compromising your privacy.</p>
+    <p>We carefully select our partners and require them to adhere to strict data protection standards. Your personal information is shared with them only to the extent necessary for them to perform their contractual obligations.</p>
+    <p>Examples of such partners include:</p>
+    <ul>
+      <li><strong>Website Hosting Providers:</strong> Companies that ensure our site is accessible and secure.</li>
+      <li><strong>Analytics Tools:</strong> Platforms like Google Analytics that help us understand how our website is used, identify areas for improvement, and enhance user experience.</li>
+      <li><strong>Payment Processors:</strong> Secure services such as Stripe or PayPal that handle transactions without exposing sensitive payment data to us.</li>
+      <li><strong>Email Marketing Platforms:</strong> Tools like Mailchimp that help us send newsletters and promotional emails responsibly and in compliance with laws.</li>
+    </ul>
+    <p>We encourage you to review the privacy policies of these third parties. GrowPrime is not responsible for their data handling practices.</p>
+  </section>
+
+  <section aria-labelledby="data-sharing-disclosure" class="container">
+    <h2 id="data-sharing-disclosure">Data Sharing and Disclosure</h2>
+    <p>We respect your privacy and limit the sharing of your personal information. GrowPrime will never sell, rent, or lease your data to external marketers or advertisers.</p>
+    <p>That said, there are specific circumstances under which we may disclose your information, including:</p>
+    <ul>
+      <li>With your explicit consent or at your direction.</li>
+      <li>In response to legal obligations, court orders, or government requests.</li>
+      <li>To protect the rights, property, or safety of GrowPrime, our users, or others, including enforcing agreements and policies.</li>
+      <li>During business transactions such as mergers, acquisitions, or asset sales, subject to confidentiality and privacy commitments.</li>
+    </ul>
+    <p>We will always strive to give you notice before sharing your data unless prohibited legally.</p>
+  </section>
+
+  <section aria-labelledby="data-security" class="container">
+    <h2 id="data-security">Data Security</h2>
+    <p>Protecting your data is a responsibility we take very seriously. We implement robust technical, administrative, and physical measures to safeguard your personal information from unauthorized access, alteration, disclosure, or destruction.</p>
+    <h3>Our Security Measures Include:</h3>
+    <ul>
+      <li><strong>Encryption:</strong> Using industry-standard SSL/TLS protocols to encrypt data transmission between your browser and our servers.</li>
+      <li><strong>Access Controls:</strong> Restricting data access to authorized employees and contractors who require it for their roles.</li>
+      <li><strong>Secure Servers:</strong> Hosting data on reliable, secure platforms with regular security audits and monitoring.</li>
+      <li><strong>Regular Updates:</strong> Applying patches and updates promptly to minimize vulnerabilities.</li>
+      <li><strong>Employee Training:</strong> Educating our staff on data privacy principles and security best practices.</li>
+      <li><strong>Incident Response:</strong> Procedures to quickly address and mitigate any security incidents we might face.</li>
+    </ul>
+    <p>Despite these efforts, no system is completely invulnerable. Always exercise caution and avoid sharing sensitive personal details over insecure communication channels.</p>
+  </section>
+
+  <section aria-labelledby="user-rights" class="container">
+    <h2 id="user-rights">Your Rights and Controls</h2>
+    <p>As a valued user, you have several important rights concerning your personal data, empowered by privacy laws such as the GDPR and CCPA. These rights help you maintain control over your information and how it is used:</p>
+    <ul>
+      <li><strong>Access:</strong> You may request a copy of the personal data GrowPrime holds about you.</li>
+      <li><strong>Correction:</strong> If your data is inaccurate or incomplete, you have the right to request corrections.</li>
+      <li><strong>Deletion:</strong> You may request that we delete your personal information, subject to compliance with legal obligations.</li>
+      <li><strong>Restriction:</strong> You can ask us to limit the use or processing of your data in certain situations.</li>
+      <li><strong>Data Portability:</strong> When technically feasible, you can receive your personal data in a portable format for transfer to another service.</li>
+      <li><strong>Objection:</strong> You have the right to object to certain types of data processing, including direct marketing.</li>
+      <li><strong>Withdraw Consent:</strong> Where you have provided consent for processing, you can revoke that consent at any time without affecting prior lawful processing.</li>
+    </ul>
+    <p><strong>How to Exercise Your Rights:</strong></p>
+    <p>To exercise any of these rights, please contact GrowPrime’s Privacy Officer at <a href="mailto:privacy@growprime.com" class="glossary-term" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="popup-privacy-contact">privacy@growprime.com</a>. We will respond promptly and in accordance with applicable legal timelines.</p>
+    <p>Please note that certain requests may require verification of your identity to protect your privacy and security.</p>
+  </section>
+
+  <section aria-labelledby="third-party-links" class="container">
+    <h2 id="third-party-links">Links to Other Websites</h2>
+    <p>Our website may contain links to third-party websites, applications, or services over which GrowPrime does not have control. These external resources have their own privacy policies and data collection practices.</p>
+    <p>We encourage you to read the privacy policies of any third-party sites you visit. GrowPrime is not responsible for their content, privacy compliance, or security practices.</p>
+  </section>
+
+  <section aria-labelledby="childrens-privacy" class="container">
+    <h2 id="childrens-privacy">Children’s Privacy</h2>
+    <p>GrowPrime’s services and website are intended for adult users and are not directed to children under the age of 13. We do not knowingly collect personal information from children under 13 without parental consent.</p>
+    <p>If a parent or guardian believes that we have collected information about a child under 13 without consent, please contact us immediately. We will take prompt action to remove such data from our records.</p>
+  </section>
+
+  <section aria-labelledby="international-users" class="container">
+    <h2 id="international-users">International Users and Data Transfers</h2>
+    <p>GrowPrime primarily operates in the United States, but we welcome visitors and customers from around the world.</p>
+    <p>If you are accessing our website or services from outside the U.S., please be aware that your personal data may be transferred to, stored, and processed in the U.S., where data protection laws may differ from your home country.</p>
+    <p>We take appropriate steps to protect your personal data during international transfers, including contractual safeguards and compliance mechanisms consistent with applicable laws.</p>
+  </section>
+
+  <section aria-labelledby="data-retention" class="container">
+    <h2 id="data-retention">Data Retention</h2>
+    <p>We retain your personal data only as long as necessary to fulfill the purposes outlined in this Privacy Policy, including providing services, complying with legal obligations, resolving disputes, and enforcing our agreements.</p>
+    <p>Once data is no longer needed, we securely delete or anonymize it in accordance with industry best practices to prevent unauthorized access or usage.</p>
+  </section>
+
+  <section aria-labelledby="policy-changes" class="container">
+    <h2 id="policy-changes">Changes to This Privacy Policy</h2>
+    <p>GrowPrime may update this Privacy Policy periodically to reflect changes in our data practices, regulatory requirements, or technological advances.</p>
+    <p>When significant changes occur, we will notify you by posting a prominent notice on our website or through direct communication if applicable.</p>
+    <p>We encourage you to revisit this page regularly to stay informed about how we protect your privacy.</p>
+  </section>
+
+  <section aria-labelledby="contact-privacy" class="container">
+    <h2 id="contact-privacy">Contact Us Regarding Privacy</h2>
+    <p>If you have any questions, concerns, or requests about this Privacy Policy or your personal data, please feel free to reach out to:</p>
+    <address>
+      <strong>GrowPrime Privacy Officer</strong><br />
+      Metrotech Center, Brooklyn, NY 11201, USA<br />
+      Phone: <a href="tel:+18442327822" aria-label="Call GrowPrime">(844) 232-7822</a><br />
+      Email: <a href="mailto:privacy@growprime.com">privacy@growprime.com</a>
+    </address>
+    <p>We value your privacy and aim to address all inquiries and concerns promptly and transparently.</p>
+  </section>
+
+  <section aria-label="Glossary of Privacy Terms" class="container">
+    <h2>Glossary of Privacy Terms</h2>
+    <p>For your convenience, here are definitions of some common privacy and data protection terms used throughout this policy. Click each term for a detailed explanation.</p>
+    <ul>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-personalinfo" tabindex="0">Personal Information</button></li>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-analytics" tabindex="0">Analytics</button></li>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-data-processing" tabindex="0">Data Processing</button></li>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-privacy-contact" tabindex="0">Privacy Officer</button></li>
+    </ul>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  &copy; 2024 GrowPrime Gardening | Metrotech Center, Brooklyn, NY 11201, USA | Phone: (844) 232-7822
+</footer>
+
+<!-- Popups for glossary terms -->
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-personalinfo" aria-labelledby="title-term-personalinfo" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Personal Information definition">&times;</button>
+    <h3 id="title-term-personalinfo">Personal Information</h3>
+    <p>Personal Information (also called personally identifiable information or PII) is any data that could potentially identify an individual, such as your name, contact details, addresses, payment data, and other private information collected directly or indirectly by GrowPrime.</p>
+    <p>We use this information to provide services, communicate with you, and improve your experience.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-analytics" aria-labelledby="title-term-analytics" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Analytics definition">&times;</button>
+    <h3 id="title-term-analytics">Analytics</h3>
+    <p>Analytics involves the collection, measurement, and analysis of website user data to understand behavior, optimize performance, and enhance the effectiveness of our services. Tools like Google Analytics help us identify popular pages, traffic sources, and user interaction patterns.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-data-processing" aria-labelledby="title-term-data-processing" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Data Processing definition">&times;</button>
+    <h3 id="title-term-data-processing">Data Processing</h3>
+    <p>Data Processing means any operation performed on personal data including collection, storage, use, transmission, or deletion. GrowPrime processes your data responsibly in accordance with applicable laws and for legitimate purposes including service delivery and compliance.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-privacy-contact" aria-labelledby="title-privacy-contact" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Privacy Officer contact details">&times;</button>
+    <h3 id="title-privacy-contact">Privacy Officer</h3>
+    <p>The Privacy Officer is the designated GrowPrime representative responsible for ensuring compliance with privacy laws and overseeing the protection of personal data. You may contact the Privacy Officer regarding any privacy questions, requests, or concerns:</p>
+    <address>
+      GrowPrime Privacy Officer<br />
+      Metrotech Center, Brooklyn, NY 11201, USA<br />
+      Phone: (844) 232-7822<br />
+      Email: <a href="mailto:privacy@growprime.com">privacy@growprime.com</a>
+    </address>
+  </div>
+</div>
+
+<script>
+  // Popup open/close logic for glossary and other popups
+  const popupButtons = document.querySelectorAll('.glossary-term');
+  const popups = document.querySelectorAll('.popup-overlay');
+
+  function openPopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+      popup.classList.add('active');
+      popup.setAttribute('aria-hidden', 'false');
+      popup.focus();
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closePopup(popup) {
+    popup.classList.remove('active');
+    popup.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  popupButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      openPopup(button.getAttribute('aria-controls'));
+    });
+    button.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openPopup(button.getAttribute('aria-controls'));
+      }
+    });
+  });
+
+  popups.forEach(popup => {
+    const closeBtn = popup.querySelector('.popup-close');
+    closeBtn.addEventListener('click', () => closePopup(popup));
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        closePopup(popup);
+      }
+    });
+    popup.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closePopup(popup);
+      }
+      // Trap tab focus inside popup
+      if (e.key === 'Tab') {
+        const focusableElements = popup.querySelectorAll('a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])');
+        if (focusableElements.length === 0) return;
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

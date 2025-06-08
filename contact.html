@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GrowPrime - Contact Us</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  :root {
+    --earth-brown: #8D6E63;
+    --olive: #A1887F;
+    --text-body: #6b7280;
+    --bg-light: #ffffff;
+    --shadow-light: rgba(141, 110, 99, 0.15);
+    --border-radius: 0.75rem;
+    --transition-speed: 0.3s;
+  }
+
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-body);
+    line-height: 1.7;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: var(--earth-brown);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+  }
+  a:hover,
+  a:focus {
+    color: var(--olive);
+    outline: none;
+  }
+  h1, h2, h3, h4 {
+    color: var(--earth-brown);
+    font-weight: 700;
+    margin-top: 0;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.25rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+  p {
+    font-size: 1.125rem;
+    max-width: 760px;
+    margin-bottom: 1.5rem;
+  }
+  ul, ol {
+    max-width: 760px;
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  li {
+    margin-bottom: 0.75rem;
+  }
+  section {
+    padding: 4rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--bg-light);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    z-index: 1000;
+  }
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--earth-brown);
+    letter-spacing: 1px;
+    user-select: none;
+    cursor: default;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  .nav-links a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color var(--transition-speed);
+  }
+  .nav-links a:hover,
+  .nav-links a:focus {
+    border-color: var(--earth-brown);
+  }
+  .btn-primary {
+    background: var(--earth-brown);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.6rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform 0.2s;
+    box-shadow: 0 6px 12px rgba(141,110,99,0.3);
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background: var(--olive);
+    transform: scale(1.05);
+    outline: none;
+  }
+
+  /* Main Content */
+  main {
+    padding-bottom: 6rem;
+  }
+  section + section {
+    border-top: 1px solid var(--shadow-light);
+  }
+
+  /* Form styling */
+  form {
+    max-width: 720px;
+    background: #f9f7f5;
+    padding: 2rem 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 20px rgba(141,110,99,0.15);
+    margin-bottom: 4rem;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--earth-brown);
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.5rem;
+    border: 1.5px solid #d6ccc2;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    color: var(--text-body);
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border-color: var(--earth-brown);
+    outline: none;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  button[type="submit"] {
+    background: var(--earth-brown);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(141,110,99,0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  button[type="submit"]:hover,
+  button[type="submit"]:focus {
+    background: var(--olive);
+    transform: scale(1.05);
+    outline: none;
+  }
+
+  /* FAQ list styling */
+  .faq-item {
+    margin-bottom: 2.5rem;
+  }
+  .faq-question {
+    font-weight: 700;
+    color: var(--earth-brown);
+    margin-bottom: 0.5rem;
+  }
+  .faq-answer {
+    font-weight: 400;
+    color: var(--text-body);
+  }
+
+  /* Glossary term link */
+  .glossary-term {
+    color: var(--earth-brown);
+    cursor: pointer;
+    border-bottom: 1px dashed var(--earth-brown);
+    font-weight: 600;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    text-align: left;
+  }
+  .glossary-term:hover,
+  .glossary-term:focus {
+    color: var(--olive);
+    outline: none;
+  }
+
+  /* Popup Modal */
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(141,110,99,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+  }
+  .popup-overlay.active {
+    display: flex;
+    animation: fadeInBackground 0.4s ease forwards;
+  }
+  @keyframes fadeInBackground {
+    from {background: rgba(141,110,99,0);}
+    to {background: rgba(141,110,99,0.85);}
+  }
+  .popup-content {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow-light);
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 2.5rem 3rem;
+    position: relative;
+    animation: popupSlideIn 0.4s cubic-bezier(0.25,0.8,0.25,1);
+    color: var(--text-body);
+  }
+  @keyframes popupSlideIn {
+    from {
+      opacity: 0; 
+      transform: translateY(60px);
+    } 
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--earth-brown);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+  }
+  .popup-close:hover,
+  .popup-close:focus {
+    background: var(--olive);
+    outline: none;
+  }
+  .popup-content h3 {
+    margin-top: 0;
+    color: var(--earth-brown);
+  }
+  .popup-content p,
+  .popup-content ul,
+  .popup-content ol {
+    margin-bottom: 1rem;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--earth-brown);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+    user-select: none;
+  }
+  footer a {
+    color: white;
+    font-weight: 600;
+  }
+
+  /* Responsive typography */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+    h2 {
+      font-size: 1.75rem;
+    }
+    p, li {
+      font-size: 1rem;
+    }
+    .popup-content {
+      padding: 1.5rem 2rem;
+      max-width: 90vw;
+      max-height: 85vh;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<header role="banner">
+  <nav role="navigation" aria-label="Primary Navigation">
+    <div class="logo" aria-label="GrowPrime Gardening Logo">GrowPrime</div>
+    <div class="nav-links">
+      <a href="index.html" tabindex="0">Home</a>
+      <a href="privacy.html" tabindex="0">Privacy </a>
+      <a href="terms.html" tabindex="0">Terms &a Conditions</a>
+      <a href="cookies.html" tabindex="0">Cookies </a>
+      <a href="contact.html" tabindex="0" aria-current="page">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="container" aria-labelledby="contact-title">
+    <h1 id="contact-title">Contact GrowPrime Gardening</h1>
+    <p>We’re excited to hear from you! Whether you have questions about our gardening services, want to schedule a consultation, need support, or just want to say hello, GrowPrime is here to help with prompt and personalized service.</p>
+    <p>This page provides you with multiple ways to reach out, comprehensive FAQs, and additional resources for your convenience.</p>
+  </section>
+
+  <section class="container" aria-labelledby="contact-info">
+    <h2 id="contact-info">Our Contact Information</h2>
+    <p><strong>Address:</strong> Metrotech Center, Brooklyn, NY 11201, USA</p>
+    <p><strong>Phone:</strong> <a href="tel:+18442327822" aria-label="Call GrowPrime">(844) 232-7822</a></p>
+    <p><strong>Email:</strong> <a href="mailto:info@growprime.com" aria-label="Email GrowPrime">info@growprime.com</a></p>
+    <p><strong>Office Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM ET</p>
+    <p>We value your time and strive to respond to all inquiries within one business day. If you contact us outside office hours, you can expect a reply on the next working day.</p>
+  </section>
+
+  <section class="container" aria-labelledby="schedule-consultation">
+    <h2 id="schedule-consultation">Schedule a Consultation</h2>
+    <p>Ready to start your gardening project? Schedule a personalized consultation with one of our expert horticulturists and landscape designers.</p>
+    <p>Please fill out the form below with as many details as possible about your garden, needs, preferred consultation method, and we'll be in touch shortly.</p>
+    <form id="contact-form" novalidate autocomplete="off" aria-describedby="form-desc">
+      <p id="form-desc">Fields marked with <span aria-hidden="true" style="color:red;">*</span> are required.</p>
+      <label for="name">Full Name <span aria-hidden="true" style="color:red;">*</span></label>
+      <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-desc"/>
+      <small id="name-desc" style="color:#8D6E63;">Please enter your full name.</small>
+
+      <label for="email">Email Address <span aria-hidden="true" style="color:red;">*</span></label>
+      <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-desc"/>
+      <small id="email-desc" style="color:#8D6E63;">We'll never share your email with third parties.</small>
+
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" name="phone" aria-describedby="phone-desc" />
+      <small id="phone-desc" style="color:#8D6E63;">Optional but helpful for scheduling calls.</small>
+
+      <label for="message">Message / Project Details <span aria-hidden="true" style="color:red;">*</span></label>
+      <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Tell us about your gardening needs or questions."></textarea>
+
+      <button type="submit" class="btn-primary">Send Message</button>
+      <p id="form-feedback" style="margin-top:1rem;font-weight:600;color:var(--earth-brown);display:none;"></p>
+    </form>
+  </section>
+
+  <section class="container" aria-labelledby="faq-section">
+    <h2 id="faq-section">Frequently Asked Questions</h2>
+
+    <article class="faq-item">
+      <h3 class="faq-question">What areas does GrowPrime serve?</h3>
+      <p class="faq-answer">We proudly serve Brooklyn and surrounding areas in New York City. Our team is experienced with local climate and native plants to provide tailored gardening solutions.</p>
+    </article>
+
+    <article class="faq-item">
+      <h3 class="faq-question">How long does a typical consultation last?</h3>
+      <p class="faq-answer">Consultations usually last between 30 minutes and 1 hour depending on your garden size and needs. This session allows us to understand your goals and offer personalized advice.</p>
+    </article>
+
+    <article class="faq-item">
+      <h3 class="faq-question">Do you provide maintenance services?</h3>
+      <p class="faq-answer">Yes! We offer comprehensive maintenance packages including lawn care, pruning, fertilization, and seasonal services. Contact us for detailed pricing.</p>
+    </article>
+
+    <article class="faq-item">
+      <h3 class="faq-question">Can I visit your office?</h3>
+      <p class="faq-answer">Yes, you are welcome to visit us at the Metrotech Center, Brooklyn, NY, during office hours to discuss services and view portfolio samples. Appointments are recommended.</p>
+    </article>
+
+    <article class="faq-item">
+      <h3 class="faq-question">How can I get a quote for my project?</h3>
+      <p class="faq-answer">You can request a quote via our contact form or phone. We provide complimentary estimates based on your garden's features and desired services.</p>
+    </article>
+
+    <article class="faq-item">
+      <h3 class="faq-question">What payment methods do you accept?</h3>
+      <p class="faq-answer">GrowPrime accepts payments via credit card, bank transfer, and checks. Payment terms are provided upfront in your service contract.</p>
+    </article>
+
+    <article class="faq-item">
+      <h3 class="faq-question">Do you offer eco-friendly gardening options?</h3>
+      <p class="faq-answer">Absolutely. We specialize in sustainable gardening—using organic fertilizers, native plants, and water-saving irrigation techniques designed to protect the environment.</p>
+    </article>
+
+    <article class="faq-item">
+      <h3 class="faq-question">What is your cancellation policy?</h3>
+      <p class="faq-answer">Please notify us at least 24 hours in advance to reschedule or cancel appointments. Late cancellations may incur fees to compensate for scheduling disruption.</p>
+    </article>
+
+  </section>
+
+  <section class="container" aria-labelledby="additional-contact-methods">
+    <h2 id="additional-contact-methods">Additional Contact Methods</h2>
+    <p>Aside from the contact form and phone, you can reach us through:</p>
+    <ul>
+      <li><strong>Social Media:</strong> Follow and message us on <a href="https://facebook.com/growprime" target="_blank" rel="noopener noreferrer">Facebook</a>, <a href="https://instagram.com/growprime" target="_blank" rel="noopener noreferrer">Instagram</a>, and <a href="https://twitter.com/growprime" target="_blank" rel="noopener noreferrer">Twitter</a>.</li>
+      <li><strong>Newsletter:</strong> Subscribe to our monthly newsletter for gardening tips and news by signing up in the form footer.</li>
+      <li><strong>Live Chat:</strong> Available during office hours on our website homepage for quick questions and support.</li>
+    </ul>
+  </section>
+
+  <section class="container" aria-labelledby="privacy-glossary">
+    <h2>Privacy and Data Usage</h2>
+    <p>Your privacy is important to us. When you contact GrowPrime, we collect and use your personal information in accordance with our <a href="privacy.html">Privacy Policy</a>.</p>
+    <p>For example, your contact details are used to respond to inquiries, send appointment reminders, and keep you informed about services you request. We do not share your personal data with third parties without your consent.</p>
+    <p>If you want to learn more about how we handle your data, please visit our Privacy Policy or contact our Privacy Officer.</p>
+  </section>
+
+  <section class="container" aria-label="Glossary of Contact Terms">
+    <h2>Glossary of Contact Terms</h2>
+    <p>Click the terms below to learn more about their meaning and relevance.</p>
+    <ul>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-consultation" tabindex="0">Consultation</button></li>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-maintenance" tabindex="0">Maintenance</button></li>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-quote" tabindex="0">Quote</button></li>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-cancellation" tabindex="0">Cancellation Policy</button></li>
+      <li><button class="glossary-term" aria-haspopup="dialog" aria-controls="popup-term-eco-friendly" tabindex="0">Eco-Friendly Gardening</button></li>
+    </ul>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  &copy; 2024 GrowPrime Gardening | Metrotech Center, Brooklyn, NY 11201, USA | Phone: (844) 232-7822
+</footer>
+
+<!-- Popups for glossary terms -->
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-consultation" aria-labelledby="title-term-consultation" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Consultation definition">&times;</button>
+    <h3 id="title-term-consultation">Consultation</h3>
+    <p>A consultation is a meeting or discussion with our gardening experts to understand your needs, provide advice, and plan your outdoor space improvements.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-maintenance" aria-labelledby="title-term-maintenance" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Maintenance definition">&times;</button>
+    <h3 id="title-term-maintenance">Maintenance</h3>
+    <p>Maintenance involves routine gardening services such as lawn mowing, pruning, pest management, and seasonal care to keep your garden healthy and attractive.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-quote" aria-labelledby="title-term-quote" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Quote definition">&times;</button>
+    <h3 id="title-term-quote">Quote</h3>
+    <p>A quote is a detailed estimate of costs for specific gardening or landscaping services provided by GrowPrime, tailored to your project's details.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-cancellation" aria-labelledby="title-term-cancellation" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Cancellation Policy definition">&times;</button>
+    <h3 id="title-term-cancellation">Cancellation Policy</h3>
+    <p>Our cancellation policy outlines the terms for rescheduling or cancelling appointments and any applicable fees.</p>
+  </div>
+</div>
+
+<div class="popup-overlay" role="dialog" aria-modal="true" aria-hidden="true" id="popup-term-eco-friendly" aria-labelledby="title-term-eco-friendly" tabindex="-1">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="Close Eco-Friendly Gardening definition">&times;</button>
+    <h3 id="title-term-eco-friendly">Eco-Friendly Gardening</h3>
+    <p>Eco-friendly gardening refers to practices that protect the environment by using organic fertilizers, conserving water, planting native species, and minimizing chemical use.</p>
+  </div>
+</div>
+
+<script>
+  // Popup open/close logic for glossary terms
+  const popupButtons = document.querySelectorAll('.glossary-term');
+  const popups = document.querySelectorAll('.popup-overlay');
+
+  function openPopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+      popup.classList.add('active');
+      popup.setAttribute('aria-hidden', 'false');
+      popup.focus();
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closePopup(popup) {
+    popup.classList.remove('active');
+    popup.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  popupButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      openPopup(button.getAttribute('aria-controls'));
+    });
+    button.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openPopup(button.getAttribute('aria-controls'));
+      }
+    });
+  });
+
+  popups.forEach(popup => {
+    const closeBtn = popup.querySelector('.popup-close');
+    closeBtn.addEventListener('click', () => closePopup(popup));
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        closePopup(popup);
+      }
+    });
+    popup.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closePopup(popup);
+      }
+      if (e.key === 'Tab') {
+        const focusableElements = popup.querySelectorAll('a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])');
+        if (focusableElements.length === 0) return;
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    });
+  });
+
+  // Contact form handling
+  const form = document.getElementById('contact-form');
+  const feedback = document.getElementById('form-feedback');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    feedback.style.display = 'none';
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !email || !message) {
+      feedback.textContent = 'Please fill all required fields marked with *.';
+      feedback.style.color = 'red';
+      feedback.style.display = 'block';
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      feedback.textContent = 'Please enter a valid email address.';
+      feedback.style.color = 'red';
+      feedback.style.display = 'block';
+      return;
+    }
+    feedback.textContent = 'Thank you for contacting GrowPrime! We will get back to you shortly.';
+    feedback.style.color = 'var(--earth-brown)';
+    feedback.style.display = 'block';
+    form.reset();
+  });
+
+</script>
+
+</body>
+</html>
